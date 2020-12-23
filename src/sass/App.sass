@@ -1,0 +1,210 @@
+@import "nullstyle.scss", "media/index.sass", "caption.sass", "flex.sass", "columns.sass"
+
+$space-1: 4px
+$space-2: 10px
+$space-3: 16px
+$space-4: 20px
+$space-5: 28px
+$space-6: 44px
+
+body
+    font-family: 'Russo One', sans-serif
+
+.App
+    pisition: relative
+    background: #535353
+    overflow-x: hidden
+    height: 100vh
+    width: 100vw
+    display: flex
+    justify-content: center
+    align-items: center
+
+.drum_machine
+    border: 5px solid orange
+    position: relative
+    width: 300px
+    background-color: #b3b3b3
+    padding: 24px
+    margin: 8px
+    +mq-sm
+        width: 576px
+    +mq-md
+        width: 660px
+
+.label
+    position: absolute
+    top: 0
+    right: 0
+
+//--------------------keys-----------------
+
+.keypad
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    grid-gap: 12px
+    width: 100%
+    +mq-sm
+        width: 60%
+        padding-right: 24px
+
+.key
+    border-radius: 4px
+    background: grey
+    padding: 30px 0
+    box-shadow: black 3px 3px 5px
+    &.is-active
+        background: orange
+        padding-top: 32px
+        padding-bottom: 28px
+        box-shadow: none
+
+//-------------icon-------------
+
+.icon
+    &-freeCodeCamp
+        margin: 0 4px
+
+//---------------------------switcher--------------
+.mixer
+    width: 100%
+    margin: 12px 0
+    +mq-sm
+        width: 40%
+
+.switcher
+    margin: 12px auto
+    width: 70px
+    &__
+        &text
+
+        &tumbler
+            margin: 8px 0
+            height: 24px
+            width: 100%
+            background: black
+            position: relative
+            cursor: pointer
+            &::before
+                content: ''
+                position: absolute
+                background: blue
+                border: 2px solid black
+                height: 100%
+                width: 50%
+                top: 0
+                left: 0
+                transition: .3s
+            &.is-active
+                &::before
+                    left: 50%
+                    transition: .3s
+
+            &--light
+                position: absolute
+                background: red
+                border: 2px solid black
+                height: 12px
+                width: 12px
+                right: -20px
+                top: 6px
+                &.is-active
+                    background: green
+.display
+    margin: 0 auto
+    height: 60px
+    width: 80%
+    background: grey
+    display: flex
+    justify-content: center
+    align-items: center
+
+.volume
+    margin: 12px 0
+    input[type=range]
+        -webkit-appearance: none
+        margin: 10px 0
+        width: 100%
+
+    input[type=range]:focus
+        outline: none
+
+    input[type=range]::-webkit-slider-runnable-track
+        width: 100%
+        height: 8px
+        cursor: pointer
+        animate: 0.2s
+        box-shadow: 1px 1px 1px #000000
+        background: #4A4A4A
+        border-radius: 0px
+        border: 1px solid #000000
+
+    input[type=range]::-webkit-slider-thumb
+        box-shadow: 1px 1px 1px #000000
+        border: 1px solid #000000
+        height: 32px
+        width: 13px
+        border-radius: 0px
+        background: #0F2FFF
+        cursor: pointer
+        -webkit-appearance: none
+        margin-top: -13px
+
+    input[type=range]:focus::-webkit-slider-runnable-track
+        background: #4A4A4A
+
+    input[type=range]::-moz-range-track
+        width: 100%
+        height: 8px
+        cursor: pointer
+        animate: 0.2s
+        box-shadow: 1px 1px 1px #000000
+        background: #4A4A4A
+        border-radius: 0px
+        border: 1px solid #000000
+
+    input[type=range]::-moz-range-thumb
+        box-shadow: 1px 1px 1px #000000
+        border: 1px solid #000000
+        height: 32px
+        width: 13px
+        border-radius: 0px
+        background: #0F2FFF
+        cursor: pointer
+
+    input[type=range]::-ms-track
+        width: 100%
+        height: 8px
+        cursor: pointer
+        animate: 0.2s
+        background: transparent
+        border-color: transparent
+        color: transparent
+
+    input[type=range]::-ms-fill-lower
+        background: #4A4A4A
+        border: 1px solid #000000
+        border-radius: 0px
+        box-shadow: 1px 1px 1px #000000
+
+    input[type=range]::-ms-fill-upper
+        background: #4A4A4A
+        border: 1px solid #000000
+        border-radius: 0px
+        box-shadow: 1px 1px 1px #000000
+
+    input[type=range]::-ms-thumb
+        margin-top: 1px
+        box-shadow: 1px 1px 1px #000000
+        border: 1px solid #000000
+        height: 32px
+        width: 13px
+        border-radius: 0px
+        background: #0F2FFF
+        cursor: pointer
+
+    input[type=range]:focus::-ms-fill-lower
+        background: #4A4A4A
+
+    input[type=range]:focus::-ms-fill-upper
+        background: #4A4A4A
