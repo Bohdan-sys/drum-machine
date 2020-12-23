@@ -57,15 +57,3 @@ export const DrumContextProvider = ({ children }) => {
     )
 }
 
-// export const AppContextProvider = DrumContext.Provider;
-// export const AppContextConsumer = DrumContext.Consumer;
-
-// export const withAppContext = (Component) => {
-//   return (props) => {
-//     return (
-//       <AppContextConsumer>
-//         {(value) => <Component {...props} appContext={value} />}
-//       </AppContextConsumer>
-//     );
-//   };
-// };
